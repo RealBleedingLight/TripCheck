@@ -132,4 +132,4 @@ def generate_gpx_file(stations, file_path="static/fuel_stops.gpx"):
     ElementTree(gpx).write(file_path, encoding="utf-8", xml_declaration=True)
     return file_path
 
-print("API KEY USED:", api_key)
+
