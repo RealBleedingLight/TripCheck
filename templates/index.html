@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Stop Planner</title>
+</head>
+<body>
+    <h1>🛣️ Fuel Stop Planner</h1>
+
+    <form action="/plan" method="POST">
+        <label>Start Coordinates (lat,lng):</label><br>
+        <input type="text" name="origin" value="17.3850,78.4867" required><br><br>
+
+        <label>Destination Coordinates (lat,lng):</label><br>
+        <input type="text" name="destination" value="34.1526,77.5771" required><br><br>
+
+        <label>Mileage (km/L):</label><br>
+        <input type="number" step="0.1" name="mileage" value="30" required><br><br>
+
+        <label>Fuel Tank Capacity (L):</label><br>
+        <input type="number" step="0.1" name="fuel_capacity" value="7" required><br><br>
+
+        <label>Average Speed (km/h):</label><br>
+        <input type="number" step="0.1" name="speed" value="80" required><br><br>
+
+        <label>Rest Interval (minutes):</label><br>
+        <input type="number" step="1" name="rest_interval" value="90" required><br><br>
+
+        <input type="submit" value="Plan Route">
+    </form>
+</body>
+</html>

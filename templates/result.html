@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Stop Results</title>
+</head>
+<body>
+    <h1>📍 Fuel Stop Plan</h1>
+
+    <p><strong>Total Distance:</strong> {{ total_km }} km</p>
+    <p><strong>Estimated Time:</strong> {{ total_hr }} hours</p>
+
+    {% if stations %}
+        <h2>Recommended Stops:</h2>
+        <ul>
+        {% for stop in stations %}
+            <li>
+                <strong>{{ stop.name }}</strong><br>
+                📍 {{ stop.address }}<br>
+                📏 {{ stop.distance_km }} km from start  
+                (⛽ {{ stop.fuel_used }} L | ⏱️ ETA: {{ stop.eta_hr }} hrs)<br>
+                🛑 From last stop: {{ stop.distance_from_last }} km | {{ stop.fuel_from_last }} L | {{ stop.time_from_last }} hrs
+            </li>
+            <br>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No fuel stations found along this route.</p>
+    {% endif %}
+
+    {% if gpx_available %}
+        <a href="/download">📥 Download GPX File</a>
+    {% endif %}
+</body>
+</html>

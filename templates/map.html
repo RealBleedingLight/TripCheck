@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b65974394529367b6cee944baf9e60f7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b65974394529367b6cee944baf9e60f7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b65974394529367b6cee944baf9e60f7 = L.map(
+                "map_b65974394529367b6cee944baf9e60f7",
+                {
+                    center: [17.38493, 78.48669],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3337ec370aec8e3207896786cadfefa5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3337ec370aec8e3207896786cadfefa5.addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var poly_line_543bdf690a3b629f5122c28a01eace1e = L.polyline(
+                [[17.38493, 78.48669], [17.46003, 78.47583], [17.57296, 78.49289], [17.94297, 78.46175], [17.98728, 78.45717], [18.03018, 78.43444], [18.09701, 78.4398], [18.25576, 78.38036], [18.34421, 78.35393], [18.38925, 78.2901], [18.47952, 78.21965], [18.56189, 78.23961], [18.61081, 78.20897], [18.66624, 78.22612], [18.76673, 78.29205], [18.93624, 78.3679], [19.04358, 78.35382], [19.1223, 78.3944], [19.16311, 78.47072], [19.21569, 78.41336], [19.29052, 78.4045], [19.41914, 78.45156], [19.51954, 78.51004], [19.61592, 78.49986], [19.68473, 78.50062], [19.74642, 78.54621], [19.82862, 78.57164], [19.90672, 78.54013], [20.0565, 78.54657], [20.19745, 78.67349], [20.37164, 78.72571], [20.47727, 78.77629], [20.54595, 78.80867], [20.55167, 78.84841], [20.60073, 78.91784], [20.64653, 78.9263], [20.83403, 78.95961], [21.02325, 79.04839], [21.07668, 79.14762], [21.15863, 79.19579], [21.17792, 79.26073], [21.2116, 79.25899], [21.32252, 79.22496], [21.49776, 79.32728], [21.62961, 79.39201], [21.83068, 79.50203], [21.89202, 79.53129], [22.02023, 79.5367], [22.24671, 79.54195], [22.39787, 79.5529], [22.46078, 79.58221], [22.62435, 79.63575], [22.80851, 79.75035], [22.91765, 79.83334], [23.08476, 79.91089], [23.1272, 79.86483], [23.18864, 79.86906], [23.23522, 79.92852], [23.3324, 80.01713], [23.4113, 80.0745], [23.52629, 80.139], [23.59944, 80.22611], [23.75066, 80.33364], [23.86579, 80.35447], [23.96215, 80.40335], [24.0431, 80.47106], [24.09157, 80.55435], [24.23009, 80.74315], [24.26262, 80.79141], [24.30378, 80.77858], [24.38461, 80.80066], [24.52404, 80.82202], [24.61217, 80.8104], [24.75108, 80.78358], [24.84601, 80.82055], [24.96512, 80.79355], [25.14596, 80.8479], [25.1987, 80.80321], [25.27738, 80.72254], [25.49342, 80.46564], [25.54136, 80.35737], [25.53332, 80.26664], [25.5711, 80.09357], [25.59654, 79.74878], [25.68987, 79.60472], [25.83298, 79.48555], [25.90041, 79.38111], [26.04037, 79.30335], [26.12733, 79.27214], [26.21303, 79.31115], [26.34761, 79.38103], [26.4111, 79.41862], [26.52864, 79.42978], [26.75102, 79.35795], [26.82256, 79.31349], [26.90646, 79.33149], [26.91815, 79.15026], [26.9826, 78.99709], [27.01597, 78.92983], [26.993, 78.86836], [26.9744, 78.66172], [27.03702, 78.45873], [27.0666, 78.24059], [27.16806, 78.11798], [27.24657, 78.09286], [27.31747, 77.96308], [27.35179, 77.84618], [27.41535, 77.79147], [27.5711, 77.74689], [27.8412, 77.72333], [27.96343, 77.61129], [28.08694, 77.56994], [28.38492, 77.53174], [28.46351, 77.45996], [28.53214, 77.35816], [28.65142, 77.26155], [28.70371, 77.2275], [28.73611, 77.17156], [28.87664, 77.12049], [29.09312, 77.05445], [29.37949, 76.97344], [29.65318, 76.98586], [29.68424, 77.00518], [29.71853, 76.98219], [29.87222, 76.92476], [30.14664, 76.86627], [30.2698, 76.85329], [30.35432, 76.80431], [30.47442, 76.61408], [30.78847, 76.04485], [30.93282, 75.86688], [30.9998, 75.78758], [31.14383, 75.77514], [31.24447, 75.74333], [31.3059, 75.63087], [31.35423, 75.59095], [31.50417, 75.63402], [31.79608, 75.6564], [31.95092, 75.61266], [32.10824, 75.60921], [32.21271, 75.66228], [32.24008, 75.65669], [32.27535, 75.59147], [32.38319, 75.6042], [32.39166, 75.52432], [32.46343, 75.34289], [32.4849, 75.30921], [32.5046, 75.32379], [32.54408, 75.35193], [32.59055, 75.35201], [32.62699, 75.34483], [32.66631, 75.27702], [32.72752, 75.15263], [32.77315, 75.14889], [32.84525, 75.14974], [32.92878, 75.14577], [32.97711, 75.18346], [33.03608, 75.27159], [33.18143, 75.29874], [33.24743, 75.21483], [33.28604, 75.17664], [33.31348, 75.18739], [33.35144, 75.17689], [33.39966, 75.19514], [33.5957, 75.17021], [33.72598, 75.09736], [33.8389, 75.06292], [33.96251, 74.96694], [34.01696, 74.89233], [34.04657, 74.86968], [34.09715, 74.81259], [34.20015, 74.80536], [34.24516, 74.78615], [34.28758, 74.84052], [34.23213, 74.97187], [34.24619, 75.06663], [34.3017, 75.26226], [34.26161, 75.42446], [34.31164, 75.54149], [34.39453, 75.59449], [34.41528, 75.70963], [34.43219, 75.81045], [34.42478, 75.88918], [34.49354, 75.94754], [34.55068, 75.97964], [34.59355, 76.00774], [34.59911, 76.07468], [34.59282, 76.12032], [34.55859, 76.1287], [34.52908, 76.17534], [34.44875, 76.27691], [34.40115, 76.30169], [34.3787, 76.36628], [34.38944, 76.44909], [34.37248, 76.52663], [34.30481, 76.63893], [34.29413, 76.7055], [34.28376, 76.76936], [34.29625, 76.81663], [34.3203, 76.87141], [34.29112, 77.0339], [34.2341, 77.12974], [34.26267, 77.21636], [34.22426, 77.27145], [34.16086, 77.34195], [34.19053, 77.38313], [34.14779, 77.47084], [34.15264, 77.57707]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var marker_999b8cacb7c9c713ad80340032c833fd = L.marker(
+                [18.4493217, 78.230249],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_b925c2b3644e5ea8158261834c62fcce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85bc72e2626571eb958e33a5479cca44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67f7b1dde91c045f7e93fc67fff6b1d5 = $(`<div id="html_67f7b1dde91c045f7e93fc67fff6b1d5" style="width: 100.0%; height: 100.0%;">CNG station Bharat Petroleum, Petrol Pump and CNG Station - Sri Vijaya Durga Filling Station (3.9⭐)</div>`)[0];
+                popup_85bc72e2626571eb958e33a5479cca44.setContent(html_67f7b1dde91c045f7e93fc67fff6b1d5);
+            
+        
+
+        marker_999b8cacb7c9c713ad80340032c833fd.bindPopup(popup_85bc72e2626571eb958e33a5479cca44)
+        ;
+
+        
+    
+    
+                marker_999b8cacb7c9c713ad80340032c833fd.setIcon(icon_b925c2b3644e5ea8158261834c62fcce);
+            
+    
+            var marker_44ebb0a16def097a4b4d8691cc715bf1 = L.marker(
+                [19.53421819999999, 78.5149055],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_0b34507a30c9e895509b000eee149d36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bfe6ea6de928c9fcece888230bd987b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_390d3569e4754b83aaa1fb9f321edfc9 = $(`<div id="html_390d3569e4754b83aaa1fb9f321edfc9" style="width: 100.0%; height: 100.0%;">RAHUL KRISHNA FILLING STATION BPCL GUDIHATNOOR (4.5⭐)</div>`)[0];
+                popup_2bfe6ea6de928c9fcece888230bd987b.setContent(html_390d3569e4754b83aaa1fb9f321edfc9);
+            
+        
+
+        marker_44ebb0a16def097a4b4d8691cc715bf1.bindPopup(popup_2bfe6ea6de928c9fcece888230bd987b)
+        ;
+
+        
+    
+    
+                marker_44ebb0a16def097a4b4d8691cc715bf1.setIcon(icon_0b34507a30c9e895509b000eee149d36);
+            
+    
+            var marker_5a2b40da063905cb498b73891e09f4f5 = L.marker(
+                [20.5363649, 78.8263862],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_0f497c88dfb7edd4bab833c121a951e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8c32611beb86263d404246b0e43b81a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e202d492594f7409cc871961de5c3b63 = $(`<div id="html_e202d492594f7409cc871961de5c3b63" style="width: 100.0%; height: 100.0%;">Bharat Petroleum Petrol Pump (3.8⭐)</div>`)[0];
+                popup_d8c32611beb86263d404246b0e43b81a.setContent(html_e202d492594f7409cc871961de5c3b63);
+            
+        
+
+        marker_5a2b40da063905cb498b73891e09f4f5.bindPopup(popup_d8c32611beb86263d404246b0e43b81a)
+        ;
+
+        
+    
+    
+                marker_5a2b40da063905cb498b73891e09f4f5.setIcon(icon_0f497c88dfb7edd4bab833c121a951e2);
+            
+    
+            var marker_fd3435f4197490b7c8b797be243bb060 = L.marker(
+                [21.5356087, 79.3436625],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_dbf5b35f010b4169131586f9a1e11b2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aad9d0beb2eae0a0ff835b7ff12c8989 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4084e66090c4b1ece446282d215b892 = $(`<div id="html_a4084e66090c4b1ece446282d215b892" style="width: 100.0%; height: 100.0%;">IndianOil (3⭐)</div>`)[0];
+                popup_aad9d0beb2eae0a0ff835b7ff12c8989.setContent(html_a4084e66090c4b1ece446282d215b892);
+            
+        
+
+        marker_fd3435f4197490b7c8b797be243bb060.bindPopup(popup_aad9d0beb2eae0a0ff835b7ff12c8989)
+        ;
+
+        
+    
+    
+                marker_fd3435f4197490b7c8b797be243bb060.setIcon(icon_dbf5b35f010b4169131586f9a1e11b2d);
+            
+    
+            var marker_6bcc8fa875aa34074debc8cdbe48f828 = L.marker(
+                [22.5997053, 79.6531424],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_5ae4a50663a71ae4eadff9b16d8576b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_849647b78bd78d1e1370a93ec280e8d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90696bb15cae750294a866ce5541358f = $(`<div id="html_90696bb15cae750294a866ce5541358f" style="width: 100.0%; height: 100.0%;">SHRI GANESH PETROLEUM SARASDOL (4.6⭐)</div>`)[0];
+                popup_849647b78bd78d1e1370a93ec280e8d7.setContent(html_90696bb15cae750294a866ce5541358f);
+            
+        
+
+        marker_6bcc8fa875aa34074debc8cdbe48f828.bindPopup(popup_849647b78bd78d1e1370a93ec280e8d7)
+        ;
+
+        
+    
+    
+                marker_6bcc8fa875aa34074debc8cdbe48f828.setIcon(icon_5ae4a50663a71ae4eadff9b16d8576b5);
+            
+    
+            var marker_7d5b5312173626aeca84025e0f59fe55 = L.marker(
+                [23.6357117, 80.2421937],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_f7e0a86705fdb2874432e723e0a131ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1015f233745ec198a64dd6cd1fd1e1a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4e833513f8c743c9344edcbbcd350d2 = $(`<div id="html_e4e833513f8c743c9344edcbbcd350d2" style="width: 100.0%; height: 100.0%;">M/S Sanskar Fuels - Hindustan Petroleums (5⭐)</div>`)[0];
+                popup_1015f233745ec198a64dd6cd1fd1e1a1.setContent(html_e4e833513f8c743c9344edcbbcd350d2);
+            
+        
+
+        marker_7d5b5312173626aeca84025e0f59fe55.bindPopup(popup_1015f233745ec198a64dd6cd1fd1e1a1)
+        ;
+
+        
+    
+    
+                marker_7d5b5312173626aeca84025e0f59fe55.setIcon(icon_f7e0a86705fdb2874432e723e0a131ab);
+            
+    
+            var marker_b1decd0363e5ed2dfaaa33ec4e675eef = L.marker(
+                [24.5337545, 80.8349485],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_3dc95cce2df6f4ef196f0c9c303750ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d28d821c7e00c3f0fa1a996f922b7c9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10ae029f3f42ebe30e75996823b849df = $(`<div id="html_10ae029f3f42ebe30e75996823b849df" style="width: 100.0%; height: 100.0%;">Nison Fuels (4.3⭐)</div>`)[0];
+                popup_d28d821c7e00c3f0fa1a996f922b7c9f.setContent(html_10ae029f3f42ebe30e75996823b849df);
+            
+        
+
+        marker_b1decd0363e5ed2dfaaa33ec4e675eef.bindPopup(popup_d28d821c7e00c3f0fa1a996f922b7c9f)
+        ;
+
+        
+    
+    
+                marker_b1decd0363e5ed2dfaaa33ec4e675eef.setIcon(icon_3dc95cce2df6f4ef196f0c9c303750ba);
+            
+    
+            var marker_7cebd3084ae1e99fea69791695e33b96 = L.marker(
+                [25.889979, 79.429614],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_dd20f7539f1adebf87ee4e533880a15b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d7dab3b6f7fb9d048d48885d39a7b6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e29ff34809b41d61d4df28ceb3ca867 = $(`<div id="html_6e29ff34809b41d61d4df28ceb3ca867" style="width: 100.0%; height: 100.0%;">Bharat Petroleum Petrol Pump , INDRANI FILLING STATION (4⭐)</div>`)[0];
+                popup_7d7dab3b6f7fb9d048d48885d39a7b6a.setContent(html_6e29ff34809b41d61d4df28ceb3ca867);
+            
+        
+
+        marker_7cebd3084ae1e99fea69791695e33b96.bindPopup(popup_7d7dab3b6f7fb9d048d48885d39a7b6a)
+        ;
+
+        
+    
+    
+                marker_7cebd3084ae1e99fea69791695e33b96.setIcon(icon_dd20f7539f1adebf87ee4e533880a15b);
+            
+    
+            var marker_712314bc6ac8e5334d9b9af6dfbc329c = L.marker(
+                [26.937278, 79.18021399999999],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_aacd726009ea4409c3bf0f428efe841c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c7d193e2fdf06fcd3833364c96a9bfd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ec95cd8c744000ca5f04143d2022c9a = $(`<div id="html_6ec95cd8c744000ca5f04143d2022c9a" style="width: 100.0%; height: 100.0%;">IndianOil (3.6⭐)</div>`)[0];
+                popup_2c7d193e2fdf06fcd3833364c96a9bfd.setContent(html_6ec95cd8c744000ca5f04143d2022c9a);
+            
+        
+
+        marker_712314bc6ac8e5334d9b9af6dfbc329c.bindPopup(popup_2c7d193e2fdf06fcd3833364c96a9bfd)
+        ;
+
+        
+    
+    
+                marker_712314bc6ac8e5334d9b9af6dfbc329c.setIcon(icon_aacd726009ea4409c3bf0f428efe841c);
+            
+    
+            var marker_151c0ef6827124cb3e5cdb0770ca5856 = L.marker(
+                [27.2164576, 78.0904273],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_90665c9cbf6bf2e3e174d4e224e8ce22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bd968d2f3e62c39d45728ee0e618308 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1bc5747aa7cd7d50b610903ae82c9c4 = $(`<div id="html_c1bc5747aa7cd7d50b610903ae82c9c4" style="width: 100.0%; height: 100.0%;">RAJ AUTOMOBILES HP Petrol Pump (3.8⭐)</div>`)[0];
+                popup_9bd968d2f3e62c39d45728ee0e618308.setContent(html_c1bc5747aa7cd7d50b610903ae82c9c4);
+            
+        
+
+        marker_151c0ef6827124cb3e5cdb0770ca5856.bindPopup(popup_9bd968d2f3e62c39d45728ee0e618308)
+        ;
+
+        
+    
+    
+                marker_151c0ef6827124cb3e5cdb0770ca5856.setIcon(icon_90665c9cbf6bf2e3e174d4e224e8ce22);
+            
+    
+            var marker_81cacd457800604544aaf66949dec925 = L.marker(
+                [28.39492439999999, 77.5250264],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_66ab39e5e34a2b7d963dd47b57a6b349 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce5cf630d3699f25cca543fde2a2ad56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e2e6fb31c503d35904cb35a111447fd = $(`<div id="html_3e2e6fb31c503d35904cb35a111447fd" style="width: 100.0%; height: 100.0%;">CNG FILLING STATION (4.1⭐)</div>`)[0];
+                popup_ce5cf630d3699f25cca543fde2a2ad56.setContent(html_3e2e6fb31c503d35904cb35a111447fd);
+            
+        
+
+        marker_81cacd457800604544aaf66949dec925.bindPopup(popup_ce5cf630d3699f25cca543fde2a2ad56)
+        ;
+
+        
+    
+    
+                marker_81cacd457800604544aaf66949dec925.setIcon(icon_66ab39e5e34a2b7d963dd47b57a6b349);
+            
+    
+            var marker_a9727f42064298b27f43635b47c8b2d4 = L.marker(
+                [29.386695, 76.999948],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_96ff8b942921f8b61540ac8220dcf6b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_085c4c076c3e3fc2f1974e5a6f3eb92d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b4c3464a16ce9cd2d17f30a1e867672 = $(`<div id="html_8b4c3464a16ce9cd2d17f30a1e867672" style="width: 100.0%; height: 100.0%;">Bharat Petroleum karam chand and sons (3.8⭐)</div>`)[0];
+                popup_085c4c076c3e3fc2f1974e5a6f3eb92d.setContent(html_8b4c3464a16ce9cd2d17f30a1e867672);
+            
+        
+
+        marker_a9727f42064298b27f43635b47c8b2d4.bindPopup(popup_085c4c076c3e3fc2f1974e5a6f3eb92d)
+        ;
+
+        
+    
+    
+                marker_a9727f42064298b27f43635b47c8b2d4.setIcon(icon_96ff8b942921f8b61540ac8220dcf6b3);
+            
+    
+            var marker_cf75b2956c4fd39976c702dc2d894ad9 = L.marker(
+                [30.4658155, 76.629812],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_079f5385e5cda688e6c862823864b675 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_26ace882c12787588d7b6cd95ee4f655 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b3c9168aca9632abd02443ffd40b184 = $(`<div id="html_3b3c9168aca9632abd02443ffd40b184" style="width: 100.0%; height: 100.0%;">Petrol Pump (3.9⭐)</div>`)[0];
+                popup_26ace882c12787588d7b6cd95ee4f655.setContent(html_3b3c9168aca9632abd02443ffd40b184);
+            
+        
+
+        marker_cf75b2956c4fd39976c702dc2d894ad9.bindPopup(popup_26ace882c12787588d7b6cd95ee4f655)
+        ;
+
+        
+    
+    
+                marker_cf75b2956c4fd39976c702dc2d894ad9.setIcon(icon_079f5385e5cda688e6c862823864b675);
+            
+    
+            var marker_0fba611a22597768559d6effdcd520a7 = L.marker(
+                [31.2485916, 75.775747],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_457c40d677ef5ae597d4f4042735cea4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8d83389541a0163e4a80ffb5a94b88f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4eca91c46b0dafb5f73fd382d8768758 = $(`<div id="html_4eca91c46b0dafb5f73fd382d8768758" style="width: 100.0%; height: 100.0%;">Hindustan Petroleum (4⭐)</div>`)[0];
+                popup_c8d83389541a0163e4a80ffb5a94b88f.setContent(html_4eca91c46b0dafb5f73fd382d8768758);
+            
+        
+
+        marker_0fba611a22597768559d6effdcd520a7.bindPopup(popup_c8d83389541a0163e4a80ffb5a94b88f)
+        ;
+
+        
+    
+    
+                marker_0fba611a22597768559d6effdcd520a7.setIcon(icon_457c40d677ef5ae597d4f4042735cea4);
+            
+    
+            var marker_2f6cd05e46611d2236cc6717218a0c6c = L.marker(
+                [32.2630704, 75.6344383],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_8e4e0a693d00a9d9b9946b3c48092b5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_312a890c0ef27d2e5003af1a357677ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ba8b740519347d0ea01fd861a21832a = $(`<div id="html_8ba8b740519347d0ea01fd861a21832a" style="width: 100.0%; height: 100.0%;">IndianOil (3.9⭐)</div>`)[0];
+                popup_312a890c0ef27d2e5003af1a357677ef.setContent(html_8ba8b740519347d0ea01fd861a21832a);
+            
+        
+
+        marker_2f6cd05e46611d2236cc6717218a0c6c.bindPopup(popup_312a890c0ef27d2e5003af1a357677ef)
+        ;
+
+        
+    
+    
+                marker_2f6cd05e46611d2236cc6717218a0c6c.setIcon(icon_8e4e0a693d00a9d9b9946b3c48092b5c);
+            
+    
+            var marker_8b176ac4c8b1e61351f0fa0f1d3fd8e1 = L.marker(
+                [33.2021685, 75.2917271],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_f2114421da7587547097adf194b89e91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e6b807c3faf2c63454e23019b0d41626 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2cd0dc8719a1b73edf2f5e4e220f9418 = $(`<div id="html_2cd0dc8719a1b73edf2f5e4e220f9418" style="width: 100.0%; height: 100.0%;">IndianOil (4.6⭐)</div>`)[0];
+                popup_e6b807c3faf2c63454e23019b0d41626.setContent(html_2cd0dc8719a1b73edf2f5e4e220f9418);
+            
+        
+
+        marker_8b176ac4c8b1e61351f0fa0f1d3fd8e1.bindPopup(popup_e6b807c3faf2c63454e23019b0d41626)
+        ;
+
+        
+    
+    
+                marker_8b176ac4c8b1e61351f0fa0f1d3fd8e1.setIcon(icon_f2114421da7587547097adf194b89e91);
+            
+    
+            var marker_fcbbdf708cd2ed2e4441308225369b24 = L.marker(
+                [34.1982204, 74.8064802],
+                {
+}
+            ).addTo(map_b65974394529367b6cee944baf9e60f7);
+        
+    
+            var icon_ea4b43b04e6ef3b267cdd739b6751dce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fff6f95e0d5a52ecacfe7702fb5d8f72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f184366880303f80152d205fdd80219 = $(`<div id="html_1f184366880303f80152d205fdd80219" style="width: 100.0%; height: 100.0%;">HPCL - Nagbal Filing Station (3.9⭐)</div>`)[0];
+                popup_fff6f95e0d5a52ecacfe7702fb5d8f72.setContent(html_1f184366880303f80152d205fdd80219);
+            
+        
+
+        marker_fcbbdf708cd2ed2e4441308225369b24.bindPopup(popup_fff6f95e0d5a52ecacfe7702fb5d8f72)
+        ;
+
+        
+    
+    
+                marker_fcbbdf708cd2ed2e4441308225369b24.setIcon(icon_ea4b43b04e6ef3b267cdd739b6751dce);
+            
+</script>
+</html>

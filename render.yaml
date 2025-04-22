@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: fuel-stop-planner
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: AIzaSyCfhm0SLc-7FrdRV1I_YTJm_ld9u1pjwEU
