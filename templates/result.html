@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fuel Stop Results</title>
+  <title>Fuel Stop Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f3f4f6;
+    }
+    .container {
+      max-width: 840px;
+      margin-top: 40px;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .stop-card {
+      border-left: 4px solid #0d6efd;
+      padding-left: 15px;
+      margin-bottom: 20px;
+    }
+    iframe {
+      border-radius: 10px;
+      border: none;
+      height: 500px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
-    <h1>📍 Fuel Stop Plan</h1>
+  <div class="container">
+    <h1>📍 Your Route Plan</h1>
 
     <p><strong>Total Distance:</strong> {{ total_km }} km</p>
     <p><strong>Estimated Time:</strong> {{ total_hr }} hours</p>
 
     {% if stations %}
-        <h2>Recommended Stops:</h2>
-        <ul>
-        {% for stop in stations %}
-            <li>
-                <strong>{{ stop.name }}</strong><br>
-                📍 {{ stop.address }}<br>
-                📏 {{ stop.distance_km }} km from start  
-                (⛽ {{ stop.fuel_used }} L | ⏱️ ETA: {{ stop.eta_hr }} hrs)<br>
-                🛑 From last stop: {{ stop.distance_from_last }} km | {{ stop.fuel_from_last }} L | {{ stop.time_from_last }} hrs
-            </li>
-            <br>
-        {% endfor %}
-        </ul>
+      <iframe src="/templates/map.html"></iframe>
+
+      <h4>Recommended Stops:</h4>
+      {% for stop in stations %}
+        <div class="stop-card">
+          <h5>{{ stop.name }}</h5>
+          <p class="text-muted">{{ stop.address }}</p>
+          <p>📏 {{ stop.distance_km }} km from start</p>
+          <p>⛽ {{ stop.fuel_used }} L used | ETA: {{ stop.eta_hr }} hrs</p>
+          <p>🛑 From last stop: {{ stop.distance_from_last }} km | {{ stop.fuel_from_last }} L | {{ stop.time_from_last }} hrs</p>
+        </div>
+      {% endfor %}
     {% else %}
-        <p>No fuel stations found along this route.</p>
+      <p>No stops found on this route.</p>
     {% endif %}
 
     {% if gpx_available %}
-        <a href="/download">📥 Download GPX File</a>
+      <a href="/download" class="btn btn-success mt-3">📥 Download GPX</a>
     {% endif %}
+  </div>
 </body>
 </html>
