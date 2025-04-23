@@ -121,7 +121,7 @@ def draw_route_map(polyline_encoded, stations):
             icon=folium.Icon(color="red")
         ).add_to(m)
 
-    m.save("templates/map.html")
+    m.save("static/map.html")
 
 def generate_gpx_file(stations, file_path="static/fuel_stops.gpx"):
     gpx = Element("gpx", version="1.1", creator="FuelStopPlanner")
